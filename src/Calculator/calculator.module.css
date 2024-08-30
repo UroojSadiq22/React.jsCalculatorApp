@@ -1,6 +1,5 @@
-.calculatorbasic {
+.calculatorbasic , .calculatorscientific {
   padding: 2rem;
-  width: 25vw;
   background-color: inherit;
   color: inherit;
   border-radius: 20px;
@@ -8,15 +7,11 @@
   display: flex;
   flex-direction: column;
 }
+.calculatorbasic{
+  width: 25vw;
+}
 .calculatorscientific {
-  padding: 2rem;
   width: 50vw;
-  background-color: inherit;
-  color: inherit;
-  border-radius: 20px;
-  transition: width 0.3s ease, background-color 1s ease, color 1s ease; /* Smooth transition when expanding */
-  display: flex;
-  flex-direction: column;
 }
 
 .light {
@@ -167,13 +162,8 @@
   background-color: gray;
 }
 
-@media (max-width: 1052px) {
-  .calculatorbasic {
-    margin: 10rem;
-    padding: 2rem;
-    width: 70vw;
-  }
-  .calculatorscientific {
+@media (min-width: 360px) and (max-width: 1052px) {
+  .calculatorbasic , .calculatorscientific{
     margin: 10rem;
     padding: 2rem;
     width: 70vw;
@@ -224,17 +214,6 @@
   }
 }
 @media (max-width: 1115px) {
-  /* .calculatorbasic {
-    margin: 10rem;
-    padding: 2rem;
-    width: 25vw;
-  }
-  .calculatorscientific {
-    margin: 10rem;
-    padding: 2rem;
-    width: 50vw;
-  } */
-
   .button,
   .equalbutton,
   .scientificButton {
@@ -252,5 +231,56 @@
   .displaywindow {
     height: 80px;
     padding: 0.5rem;
+  }
+}
+@media (min-width: 250px) and (max-width: 360px ){
+  .calculatorbasic , .calculatorscientific{
+    margin: 10rem;
+    padding: 2rem;
+    width: 70vw;
+  }
+
+  .displaywindow {
+    height: 80px;
+    padding: 0.5rem;
+  }
+
+  .result {
+    font-size: 3rem;
+  }
+  .buttonscontainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttons {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .button,
+  .equalbutton,
+  .scientificButton {
+    width: 40px;
+    height: 30px;
+    font-size: 12px;
+  }
+  .dark .button,
+  .dark .equalbutton,
+  .dark .scientificButton {
+    width: 40px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .scientificbuttons {
+    grid-template-columns: repeat(4, 1fr);
+    opacity: 1;
+  }
+  .line {
+    width: 100%; /* Full width for horizontal line */
+    height: 2px; /* Thickness of the line */
+    min-height: auto; /* Reset min-height */
+    transform: rotate(0deg); /* Horizontal line */
+    margin: 1rem 0; /* Space around the line */
   }
 }

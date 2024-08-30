@@ -74,3 +74,31 @@
   color: palegreen;
   font-weight: bold;
 }
+@media (min-width: 360px) and (max-width: 1042px ){
+  
+  .videocontainer h1 {
+    text-wrap: wrap;
+    font-size:30px;
+  }
+  
+  .btn {
+    top: 60%;
+    padding: 1.5rem 4rem;
+    font-size: 1.7rem;
+  }
+}
+@media (min-width: 250px) and (max-width: 360px ){
+  
+  .videocontainer h1 {
+    left: 2px;
+    right: 5px;
+    text-wrap: wrap;
+    font-size:30px;
+  }
+  
+  .btn {
+    top: 60%;
+    padding: 1.5rem 3rem;
+    font-size: 1.7rem;
+  }
+}

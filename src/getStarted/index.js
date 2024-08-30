@@ -60,7 +60,7 @@ const GetStarted = () => {
         </div>
         <div>
           <button onClick={showHistory}>
-            <i class="fa-solid fa-clock-rotate-left"></i>
+            <i className="fa-solid fa-clock-rotate-left"></i>
             <span>Show History</span>
           </button>
         </div>
