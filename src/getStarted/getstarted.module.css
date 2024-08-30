@@ -1,0 +1,247 @@
+.light {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #f5f5f5;
+  color: #000;
+  transition: background-color 1s ease, color 1s ease;
+  background-image: url('/src/assests/lightbg.jpg');
+  background-size: cover;
+  background-position: center; /* Ensure background is centered */
+  background-repeat: no-repeat;
+}
+
+.dark {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #1e1e1e;
+  color: #fff;
+  transition: background-color 1s ease, color 1s ease;
+  background-image: url('/src/assests/darkbg1.jpg');
+  background-size: cover;
+  background-position: center; /* Ensure background is centered */
+  background-repeat: no-repeat;
+}
+
+.functionalities {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  top: 30px;
+  left: 20px;
+  width: 200px;
+  margin-left: 25px;
+}
+
+.functionalities button {
+  border: none;
+  color: inherit;
+  background-color: inherit;
+  transition: background-color 0.5s ease, color 0.5s ease, width 0.3s ease,
+    height 0.3s ease;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 20px;
+  width: 50px; /* Ensures equal width */
+  height: 50px; /* Ensures equal height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+.light .functionalities button {
+  background-color: grey;
+}
+
+.light .functionalities button:hover {
+  background-color: rgb(101, 170, 170);
+}
+.dark .functionalities button {
+  background-color: grey;
+}
+.dark .functionalities button:hover {
+  color: lightgray;
+  background-color: rgb(88, 82, 99);
+  width: 180px;
+}
+
+.functionalities button i {
+  position: fixed;
+  margin-left: 25px;
+  background-color: rgb(73, 93, 146); /* Background color for the icon */
+  padding: 10px;
+  border-radius: 20px; /* Circle background for the icon */
+  transition: background-color 0.5s ease, color 0.5s ease, width 0.3s ease,
+    height 0.3s ease;
+
+  width: 50px; /* Ensures equal width */
+  height: 50px; /* Ensures equal height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.dark .functionalities button i {
+  position: fixed;
+  margin-left: 25px;
+  /* background-color: #5e2424; */
+  background-color:rgb(56, 139, 56);
+  padding: 10px;
+  border-radius: 20px; /* Circle background for the icon */
+  transition: background-color 0.5s ease, color 0.5s ease, width 0.3s ease,
+    height 0.3s ease;
+
+  width: 50px; /* Ensures equal width */
+  height: 50px; /* Ensures equal height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.functionalities button span {
+  position: absolute;
+  white-space: nowrap;
+  font-size: 15px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.functionalities button:hover {
+  width: 180px;
+}
+.functionalities button i {
+  left: 10px;
+}
+
+.functionalities button span {
+  left: 50px;
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.functionalities button:hover span {
+  transform: translateX(0);
+  opacity: 1;
+}
+@media (min-width: 360px) and (max-width: 1042px ) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .light, .dark {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+  .functionalities {
+    top: 15px;
+    left: 0;
+    width: 100%;
+    flex-direction: row;
+    gap: 20px;
+    padding: 5px 0;
+  }
+  .dark .functionalities {
+    top: 15px;
+    left: 0;
+    width: 100%;
+    flex-direction: row;
+    gap: 20px;
+    padding: 5px 0;
+  }
+
+  .functionalities button {
+    width: 50px; /* Make buttons smaller on mobile */
+    height: 40px;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    
+  }
+  .dark .functionalities button {
+    width: 50px; /* Make buttons smaller on mobile */
+    height: 40px;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .functionalities button:hover {
+    width: 150px;
+  }
+  .dark .functionalities button:hover {
+    width: 150px;
+  }
+
+  .functionalities button i {
+    margin: 0;
+    position: relative;
+    width: 40px; /* Adjust icon size */
+    height: 40px;
+    left: 0;
+    
+  }
+  .dark .functionalities button i {
+    margin: 0;
+    position: relative;
+    width: 40px; /* Adjust icon size */
+    height: 40px;
+    left: 0;
+  }
+
+  
+   .functionalities button span {
+    background-color: gray;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 20px;
+    position: absolute; /* Position absolutely within the button */
+    left: 0;
+    font-size: 15px;
+    opacity: 0; /* Hidden by default */
+    white-space: nowrap;
+    
+  }
+  .dark .functionalities button span {
+    background-color: gray;
+    color: white;
+    padding: 10px 10px;
+    border-radius: 20px;
+    position: absolute; /* Position absolutely within the button */
+    left: 0;
+    font-size: 15px;
+    opacity: 0; /* Hidden by default */
+    white-space: nowrap;
+  }
+
+  .functionalities button:hover span {
+    opacity: 1; /* Ensure the text is visible on hover */
+  }
+  .dark .functionalities button:hover span {
+    opacity: 1; /* Ensure the text is visible on hover */
+  } 
+  .functionalities button:hover i {
+    display: none;
+  }
+  .dark .functionalities button:hover i {
+    display: none;
+  }
+  
+}

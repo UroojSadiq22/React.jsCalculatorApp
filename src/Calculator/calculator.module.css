@@ -1,0 +1,256 @@
+.calculatorbasic {
+  padding: 2rem;
+  width: 25vw;
+  background-color: inherit;
+  color: inherit;
+  border-radius: 20px;
+  transition: width 0.3s ease, background-color 1s ease, color 1s ease; /* Smooth transition when expanding */
+  display: flex;
+  flex-direction: column;
+}
+.calculatorscientific {
+  padding: 2rem;
+  width: 50vw;
+  background-color: inherit;
+  color: inherit;
+  border-radius: 20px;
+  transition: width 0.3s ease, background-color 1s ease, color 1s ease; /* Smooth transition when expanding */
+  display: flex;
+  flex-direction: column;
+}
+
+.light {
+  background-color: rgb(32, 162, 192);
+  color: black;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+.dark {
+  background-color: rgb(36, 54, 5);
+  color: white;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}
+
+.line {
+  margin: 0 2rem;
+  margin-block: 1rem;
+  width: 2px;
+  min-height: 45vh;
+  background-color: gray;
+  transform: rotate(0deg); /* Default orientation */
+  transform-origin: center; /* Ensure the rotation is centered */
+}
+.dark .line {
+  background-color: black;
+}
+
+.degMode {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: x-small;
+  margin: 0 5px;
+}
+
+.displaywindow {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  margin-bottom: 2rem;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.expression {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow-x: auto;
+  width: 100%;
+  text-align: right;
+  color: gray;
+  font-weight: 600;
+  scrollbar-width: none;
+}
+.dark .expression {
+  color: black;
+}
+
+.result {
+  font-size: 4.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 0;
+}
+
+.buttonscontainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+.scientificbuttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.button,
+.equalbutton,
+.scientificButton {
+  margin: 2px;
+  font-size: 20px;
+  width: 70px;
+  height: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  color: inherit;
+  background-color: inherit;
+  transition: background-color 1s ease, color 1s ease;
+}
+.dark .button,
+.dark .equalbutton,
+.dark .scientificButton {
+  margin: 2px;
+  font-size: 20px;
+  width: 70px;
+  height: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3);
+  color: inherit;
+  background-color: inherit;
+  transition: background-color 1s ease, color 1s ease;
+}
+
+.light .equalbutton {
+  background-color: rgb(83, 109, 182);
+  border-radius: 50px;
+}
+
+.dark .equalbutton {
+  background-color: rgb(56, 139, 56);
+  border-radius: 50px;
+}
+
+.light .button:hover,
+.light .scientificButton:hover,
+.light .equalbutton:hover {
+  cursor: pointer;
+  background-color: rgb(101, 170, 170);
+}
+
+.dark .button:hover,
+.dark .scientificButton:hover,
+.dark .equalbutton:hover {
+  cursor: pointer;
+  background-color: gray;
+}
+
+@media (max-width: 1052px) {
+  .calculatorbasic {
+    margin: 10rem;
+    padding: 2rem;
+    width: 70vw;
+  }
+  .calculatorscientific {
+    margin: 10rem;
+    padding: 2rem;
+    width: 70vw;
+  }
+
+  .displaywindow {
+    height: 80px;
+    padding: 0.5rem;
+  }
+
+  .result {
+    font-size: 3rem;
+  }
+  .buttonscontainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttons {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .button,
+  .equalbutton,
+  .scientificButton {
+    width: 60px;
+    height: 50px;
+    font-size: 16px;
+  }
+  .dark .button,
+  .dark .equalbutton,
+  .dark .scientificButton {
+    width: 60px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .scientificbuttons {
+    grid-template-columns: repeat(4, 1fr);
+    opacity: 1;
+  }
+  .line {
+    width: 100%; /* Full width for horizontal line */
+    height: 2px; /* Thickness of the line */
+    min-height: auto; /* Reset min-height */
+    transform: rotate(0deg); /* Horizontal line */
+    margin: 1rem 0; /* Space around the line */
+  }
+}
+@media (max-width: 1115px) {
+  /* .calculatorbasic {
+    margin: 10rem;
+    padding: 2rem;
+    width: 25vw;
+  }
+  .calculatorscientific {
+    margin: 10rem;
+    padding: 2rem;
+    width: 50vw;
+  } */
+
+  .button,
+  .equalbutton,
+  .scientificButton {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+  .dark .button,
+  .dark .equalbutton,
+  .dark .scientificButton {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+  .displaywindow {
+    height: 80px;
+    padding: 0.5rem;
+  }
+}
