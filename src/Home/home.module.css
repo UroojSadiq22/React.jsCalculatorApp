@@ -74,7 +74,7 @@
   color: palegreen;
   font-weight: bold;
 }
-@media (min-width: 360px) and (max-width: 1042px ){
+@media (min-width: 310px) and (max-width: 768px ){
   
   .videocontainer h1 {
     text-wrap: wrap;
