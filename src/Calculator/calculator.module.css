@@ -162,11 +162,11 @@
   background-color: gray;
 }
 
-@media (min-width: 310px) and (max-width: 1052px) {
+@media (min-width: 310px) and (max-width: 768px) {
   .calculatorbasic , .calculatorscientific{
-    margin: 17rem 5rem;
+    margin: 17rem 4rem;
     padding: 2rem;
-    width: 70vw;
+    width: 75vw;
   }
 
   .displaywindow {
@@ -237,56 +237,4 @@
     margin: 1rem 0; /* Space around the line */
   }
   
-}
-
-@media (min-width: 250px) and (max-width: 310px ){
-  .calculatorbasic , .calculatorscientific{
-    margin: 10rem;
-    padding: 2rem;
-    width: 70vw;
-  }
-
-  .displaywindow {
-    height: 80px;
-    padding: 0.5rem;
-  }
-
-  .result {
-    font-size: 3rem;
-  }
-  .buttonscontainer {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .buttons {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .button,
-  .equalbutton,
-  .scientificButton {
-    width: 40px;
-    height: 30px;
-    font-size: 12px;
-  }
-  .dark .button,
-  .dark .equalbutton,
-  .dark .scientificButton {
-    width: 40px;
-    height: 30px;
-    font-size: 12px;
-  }
-
-  .scientificbuttons {
-    grid-template-columns: repeat(4, 1fr);
-    opacity: 1;
-  }
-  .line {
-    width: 100%; /* Full width for horizontal line */
-    height: 2px; /* Thickness of the line */
-    min-height: auto; /* Reset min-height */
-    transform: rotate(0deg); /* Horizontal line */
-    margin: 1rem 0; /* Space around the line */
-  }
 }

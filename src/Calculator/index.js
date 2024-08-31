@@ -151,7 +151,7 @@ const Calculator = ({ isScientific, isLightMode, history, setHistory }) => {
         let compute = evaluate(modifiedExp);
 
         // Determine the number of decimal places based on calculator type
-        const decimalPlaces = isScientific ? 12 : 7;
+        const decimalPlaces = isScientific ? 9 : 7;
         compute = parseFloat(compute.toFixed(decimalPlaces));
 
         setResult(compute.toString());
