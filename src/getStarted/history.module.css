@@ -65,3 +65,9 @@ h2 {
   border-bottom: 1px solid rgb(32, 162, 192);
   padding: 10px 0;
 }
+@media (min-width: 360px) and (max-width: 1042px ){
+  .content {
+    width: 70%;
+    max-width: 500px;
+  }
+}
