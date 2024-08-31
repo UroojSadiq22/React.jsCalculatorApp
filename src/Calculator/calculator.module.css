@@ -192,6 +192,7 @@
     width: 60px;
     height: 50px;
     font-size: 16px;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
   .dark .button,
   .dark .equalbutton,
@@ -199,7 +200,29 @@
     width: 60px;
     height: 50px;
     font-size: 16px;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
+
+  .light .button:hover,
+.light .scientificButton:hover,
+.light .equalbutton:hover,
+.light .button:active,
+.light .scientificButton:active,
+.light .equalbutton:active {
+  cursor: pointer;
+  background-color: rgb(101, 170, 170);
+}
+
+.dark .button:hover,
+.dark .scientificButton:hover,
+.dark .equalbutton:hover,
+.dark .button:active,
+.dark .scientificButton:active,
+.dark .equalbutton:active {
+  cursor: pointer;
+  background-color: gray;
+}
+
 
   .scientificbuttons {
     grid-template-columns: repeat(4, 1fr);
@@ -212,6 +235,7 @@
     transform: rotate(0deg); /* Horizontal line */
     margin: 1rem 0; /* Space around the line */
   }
+  
 }
 @media (max-width: 1115px) {
   .button,

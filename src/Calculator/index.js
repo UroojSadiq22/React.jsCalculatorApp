@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import calculatorstyle from "./calculator.module.css";
+import { evaluate } from 'mathjs'
 
 const Calculator = ({ isScientific, isLightMode, history, setHistory }) => {
   const [expression, setExpression] = useState("");
@@ -89,8 +90,16 @@ const Calculator = ({ isScientific, isLightMode, history, setHistory }) => {
       setExpression(expression + "/100");
       setDisplayExpression(displayexpression + buttonValue);
     } else if (scientificFunctions.hasOwnProperty(buttonValue)) {
-      setExpression(expression + buttonValue + "(");
-      setDisplayExpression(displayexpression + buttonValue + "(");
+      if (buttonValue === "π" || buttonValue === "e") {
+        // Handle constants π and e
+        const constantValue = buttonValue === "π" ? Math.PI : Math.E;
+        setExpression(expression + constantValue);
+        setDisplayExpression(displayexpression + buttonValue);
+      }
+      else {
+        setExpression(expression + buttonValue + "(");
+        setDisplayExpression(displayexpression + buttonValue + "(");
+      }
     } else if (buttonValue === "!") {
       const lastNumber = findLastNumber(expression);
       if (lastNumber !== null) {
@@ -125,12 +134,12 @@ const Calculator = ({ isScientific, isLightMode, history, setHistory }) => {
         modifiedExp = modifiedExp.replace(/(\d+|\))\s*(\()/g, "$1*$2");
 
         // Handle power (^) by replacing it with Math.pow
-        modifiedExp = modifiedExp.replace(
-          /(\d+(?:\.\d+)?|\([^)]+\))\s*\^\s*(\d+(?:\.\d+)?|\([^)]+\))/g,
-          (match, base, exp) => {
-            return `Math.pow(${base},${exp})`;
-          }
-        );
+        // modifiedExp = modifiedExp.replace(
+        //   /(\d+(?:\.\d+)?|\([^)]+\))\s*\^\s*(\d+(?:\.\d+)?|\([^)]+\))/g,
+        //   (match, base, exp) => {
+        //     return `Math.pow(${base},${exp})`;
+        //   }
+        // );
 
         Object.keys(scientificFunctions).forEach((key) => {
           const regExp = new RegExp(`${key}\\(([^)]+)\\)`, "g");
@@ -139,7 +148,7 @@ const Calculator = ({ isScientific, isLightMode, history, setHistory }) => {
             return scientificFunctions[key](value);
           });
         });
-        let compute = eval(modifiedExp);
+        let compute = evaluate(modifiedExp);
 
         // Determine the number of decimal places based on calculator type
         const decimalPlaces = isScientific ? 12 : 7;
